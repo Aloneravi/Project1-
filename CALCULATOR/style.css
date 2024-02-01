@@ -1,0 +1,74 @@
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to right bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  /* background: rgb(133,46,113);
+  background: linear-gradient(90deg, rgba(133,46,113,1) 0%, rgba(255,138,0,1) 50%); */
+}
+#display{
+  width: 20rem;
+  outline: none;
+  padding: 18px;
+  color: white;
+  font-size: 1.4rem;
+  background: transparent;
+  border: 2px solid rgb(240, 235, 235);
+}
+.calculator {
+  padding: 20px;
+  text-align: center;
+  border: 2px solid rgb(245, 239, 239);
+}
+.keys {
+  display: grid;
+  grid-gap: 10px;
+  margin-top: 10px;
+  grid-template-columns: repeat(4, 1fr);
+}
+button {
+  padding: 25px;
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+  background: transparent;
+  border: 2px solid rgb(231, 227, 227);
+}
+button:hover{
+  background-color: rgba(128, 128, 128, 0.301);
+}
+.slider-thumb::before {
+  position: absolute;
+  content: "";
+  left: 36%;
+  top: 23%;
+  width: 490px;
+  height: 490px;
+  background: #17141d;
+  border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
+  will-change: border-radius, transform, opacity;
+  animation: sliderShape 5s linear infinite;
+  display: block;
+  z-index: -1;
+  -webkit-animation: sliderShape 5s linear infinite;
+}
+@keyframes sliderShape{
+  0%,100%{
+  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    transform: translate3d(0,0,0) rotateZ(0.01deg);
+  }
+  34%{
+      border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+    transform:  translate3d(0,5px,0) rotateZ(0.01deg);
+  }
+  50%{
+    transform: translate3d(0,0,0) rotateZ(0.01deg);
+  }
+  67%{
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60% ;
+    transform: translate3d(0,-3px,0) rotateZ(0.01deg);
+  }
+}
